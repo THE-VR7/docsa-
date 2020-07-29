@@ -1,0 +1,30 @@
+{
+  "name": "DosApp",
+  "version": "1.0.0",
+  "description": "MEAN Stack Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "ng build --aot --prod"  
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/THE-VR7/My-Instagram/issues"
+  },
+  "homepage": "https://github.com/THE-VR7/My-Instagram#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.16",
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.14.0",
+    "npm": "6.13.4"
+  }
+}
