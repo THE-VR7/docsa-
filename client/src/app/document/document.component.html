@@ -1,0 +1,48 @@
+<div class="container" *ngIf="document!==undefined" id="container">
+    <div class="row">
+        <div class="col-md-2 offset-2">
+            <button type="button" class="btn btn-success">Request Access</button>
+        </div>
+        <div class="col-md-2 offset-4">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Users
+                </button>
+                <div class="dropdown-menu" *ngIf="users!==null" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item" *ngFor="let item of users"> 
+                       <img src={{item.pic}} alt="" style="width: 50px; height: 50px; border-radius: 50%;">
+                       {{item.name}}
+                       <i  *ngIf="item.isloggedin"  class="fa fa-dot-circle-o" aria-hidden="true" style="color: green;"></i>
+                       <i *ngIf="!item.isloggedin" class="fa fa-dot-circle-o" aria-hidden="true" style="color: red;"></i>
+
+                    </div>
+                </div>
+              </div> 
+        </div>
+        <div class="col-md-2">
+
+            <button type="button" (click)="logout()" class="btn btn-primary">LogOut</button>
+        </div>
+
+    </div>
+
+
+
+    <div  class="doc">
+        <H1>Title of the document is: </H1> <h4>{{document.title}}</h4>
+        <br>
+        <h2>Body of the document is: </h2>
+        <p>
+            {{document.body}}
+        </p>
+    
+    
+    
+    </div>
+
+
+
+
+</div>
+
+

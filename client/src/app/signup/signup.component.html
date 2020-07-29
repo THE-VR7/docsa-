@@ -1,0 +1,41 @@
+<div class="signup">
+    <div class="container" id="container">
+        <form [formGroup]="signupform" (ngSubmit)="signup(signupform.value)">
+            <h2>SignUp</h2>
+            <br>
+            <div class="form-row">
+            <div class="form-group col-md-5">
+                <label for="examp">Name</label>
+                <input type="email" class="form-control" id="name" formControlName="name"  placeholder="Enter Name">
+              </div>
+            <div class="form-group col-md-5 offset-2">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="email" formControlName="email"  placeholder="Enter email">
+            </div>
+        </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select Avatar
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <img *ngFor="let item of avatars" src={{item}} (click)="avatarselection(item)"  alt="">                       
+                </div>
+              </div> 
+            <br>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+            </div>
+            
+            <button type="submit" [disabled]="signupform.invalid" class="btn btn-primary">Submit</button>
+            <br>
+            <div class="">
+                <p>Already, have an account ?</p>
+                <!-- <p>{{signupform.value | json}} {{signupform.status | json}}  {{formErrors.username}} {{formErrors.name}} {{formErrors.email}} {{formErrors.password}} </p> -->
+                <a [routerLink]="[ '/login']"><button class="btn btn-info">Login</button></a>
+            </div>
+        </form>
+
+
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-7">
+            <h1>Recent Documents are : </h1>
+            <br>
+            <h2><a [routerLink]="[ '/doc',item._id]" *ngFor="let item of docs">{{item.title}}<br></a></h2>
+            
+        </div>
+        <div class="col-md-5">
+            
+            <a [routerLink]="[ '/login']" *ngIf="!isloggedin"><button type="button" class="btn btn-primary">LogIn</button></a>
+            <br>
+            <a [routerLink]="[ '/signup']" *ngIf="!isloggedin" ><button type="button" class="btn btn-primary">SignUp</button></a>
+            
+            <!-- <div >
+                <h1>Name : </h1>
+                <h1> Email : </h1>
+                <img src="" alt="">
+            </div> -->
+        </div>
+    </div>
+
+
+</div>
